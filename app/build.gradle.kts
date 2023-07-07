@@ -30,10 +30,11 @@ androidApplication {
 }
 
 dependencies {
-    
     implementation(libs.bundles.kotlin)
     implementation(libs.bundles.android)
+    implementation(libs.bundles.coil)
     implementation(libs.bundles.compose)
+    debugImplementation(libs.bundles.compose.ui.tool)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
@@ -41,16 +42,8 @@ dependencies {
     implementation(libs.router)
     kapt(libs.router.compiler)
 
-    implementation(libs.bundles.coil)
-
-    testImplementation(libs.junit4)
-
-    androidTestImplementation(libs.androidx.junit.ktx)
-    androidTestImplementation(libs.espresso.core)
-    androidTestImplementation(libs.androidx.test.core)
-    androidTestImplementation(libs.androidx.test.runner)
-    androidTestImplementation(libs.androidx.test.rules)
-    androidTestImplementation(libs.truth)
+    testImplementation(libs.bundles.unit.test)
+    androidTestImplementation(libs.bundles.android.test)
 
     detektPlugins(libs.detekt.formatting)
 }
